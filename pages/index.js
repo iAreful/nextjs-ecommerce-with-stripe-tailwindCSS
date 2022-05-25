@@ -2,7 +2,11 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import products from "../products.json";
+import { initiateCheckout } from "../lib/payments.js";
+
 export default function Home() {
+	console.log("GREETING", process.env.GREETING);
+	// console.log(NEXT_PUBLIC_STRIPE_API_KEY);
 	// console.log("products", products);
 	return (
 		<div className={styles.container}>
@@ -23,7 +27,7 @@ export default function Home() {
 						console.log(prd.title);
 						console.log(prd.price);
 						return (
-							<a href='' key={prd.id}>
+							<div key={prd.id}>
 								<Image
 									src={prd.image}
 									className='rounded-xl'
@@ -35,7 +39,21 @@ export default function Home() {
 								<h2 className='font-bold'>{prd.title}</h2>
 								<p className='font-bold text-sm pb-2'>$ {prd.price}</p>
 								<p>{prd.description}</p>
-							</a>
+								<button
+									className='font-bold text-xl p-2 border-2 rounded-xl bg-blue-400'
+									onClick={() => {
+										initiateCheckout({
+											lineItems: [
+												{
+													price: prd.id,
+													quantity: 1,
+												},
+											],
+										});
+									}}>
+									Buy Now
+								</button>
+							</div>
 						);
 						// const { tiitle, price, Description, image } = product;
 					})}
