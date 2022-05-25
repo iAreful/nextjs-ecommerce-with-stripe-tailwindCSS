@@ -1,0 +1,23 @@
+[
+	{
+		"id": "price_1L3NADKkPcBPLzJU9MkILqku",
+		"title": "Demo book 1",
+		"description": "A demo book item for Web App Projects",
+		"image": "/book/book1.jpg",
+		"price": 14.99
+	},
+	{
+		"id": "price_1L3NEFKkPcBPLzJfgfgVnAcA5M2",
+		"title": "Demo book 2",
+		"description": "A demo book item for Web App Projects",
+		"image": "/book/book2.jpg",
+		"price": 55.52
+	},
+	{
+		"id": "price_1L3NEFKkPcBPLzJUVnAcA5M2",
+		"title": "Demo book 3",
+		"description": "A demo book item for Web App Projects",
+		"image": "/book/book3.jpg",
+		"price": 23.232
+	}
+]
